@@ -1,10 +1,10 @@
-'use client'
 
-import { Button } from "@/components/ui/button";
+
+
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import { SignInButton, UserButton } from "@clerk/nextjs";
-import { Authenticated, Unauthenticated } from "convex/react";
+
 import Image from "next/image";
+import { HeaderActions } from "./header-actions";
 
 
 export function Header() {
@@ -15,17 +15,9 @@ export function Header() {
                     <Image src="/bigbrain.svg" className="" width={30} height={30} alt="BigBrain" />
                     BigBrain
                 </div>
-                <div>
-                <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
-      <Authenticated>
-        
-        <div className="flex gap-4">
-        <ModeToggle />
-        <UserButton />
-        </div>
-      </Authenticated>
+                <div className="flex gap-x-4 items-center">
+                <ModeToggle />
+                <HeaderActions />
                 </div>
             </div>
             
