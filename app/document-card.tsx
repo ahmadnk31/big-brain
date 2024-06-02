@@ -9,18 +9,21 @@ import {
   } from "@/components/ui/card"
 import { api } from "@/convex/_generated/api";
 import { Doc } from "@/convex/_generated/dataModel"
+import { Eye } from "lucide-react";
+import Link from "next/link";
 
 export function DocumentCard({document}: {document: Doc<'documents'>}){
-
     return(
         <Card>
             <CardHeader>
                 <CardTitle>{document.title}</CardTitle>
             </CardHeader>
             <CardFooter>
-                <div className="flex gap-x-4">
-                    <Button variant={"secondary"}>View</Button>
-                </div>
+                    <Button variant={"secondary"} >
+                        <Link href={`/documents/${document._id}`} className="flex justify-center gap-1">
+                        <Eye className="size-5"/> View
+                        </Link>
+                        </Button>
             </CardFooter>
         </Card>
     )
